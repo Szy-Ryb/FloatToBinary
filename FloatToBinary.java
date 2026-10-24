@@ -20,13 +20,13 @@ public class FloatToBinary { // główna klasa programu w Javie
 
             float liczba = Float.parseFloat(wejscie); // zamiana tekstu na float
 
-            if (Float.isInfinite(liczba)) { // liczba za duża jak na float (powyżej ok. 3.4e38)
+            if (Float.isInfinite(liczba)) { // liczba za duża jak na float
 
                 System.out.println("Błąd!! Liczba jest poza zakresem typu float!");
 
             } else {
 
-                int bity = Float.floatToIntBits(liczba); // pobranie surowych 32 bitów zapisu IEEE 754
+                int bity = Float.floatToIntBits(liczba); // pobranie surowych 32 bitów zapisu ieee 754
 
                 int znak = (bity >>> 31) & 1; // bit 31 to znak (0 = dodatnia, 1 = ujemna)
                 int wykladnik = (bity >>> 23) & 0xFF; // bity 30-23 to wykładnik (8 bitów)
