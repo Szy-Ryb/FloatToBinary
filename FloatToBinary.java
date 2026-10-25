@@ -8,11 +8,12 @@ public class FloatToBinary { // główna klasa programu w Javie
 
         System.out.println("Copyright Szymon Rybikowski"); // copyright
 
-        System.out.print("Podaj liczbę zmiennoprzecinkową (np. 5.75 lub -0,1): "); // prośba o liczbę
+        System.out.print("Podaj liczbę zmiennoprzecinkową (np. 5.75, -0,1 lub 3.75e3): "); // prośba o liczbę
 
         String wejscie = scanner.next().replace(',', '.'); // pobranie tekstu i zamiana przecinka na kropkę
 
-        if (!wejscie.matches("[+-]?\\d+(\\.\\d+)?([eE][+-]?\\d+)?")) { // sprawdzenie formatu (odrzuca m.in. NaN, Infinity, 1f)
+        // liczba: opcjonalny znak, (cyfry z opcjonalną częścią ułamkową LUB sama część ułamkowa np. .5), opcjonalny wykładnik e/E
+        if (!wejscie.matches("[+-]?(\\d+(\\.\\d*)?|\\.\\d+)([eE][+-]?\\d+)?")) {
 
             System.out.println("Błąd!! To nie jest poprawna liczba zmiennoprzecinkowa!");
 
